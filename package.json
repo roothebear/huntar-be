@@ -1,0 +1,28 @@
+{
+  "name": "scavangar-be",
+  "version": "1.0.0",
+  "description": "The backend for the AR game app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "NODE_ENV=test nodemon listen.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faizakhancode/scavangAR-be.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faizakhancode/scavangAR-be/issues"
+  },
+  "homepage": "https://github.com/faizakhancode/scavangAR-be#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jest": "^27.5.1",
+    "mongoose": "^6.2.7",
+    "nodemon": "^2.0.15"
+  }
+}
