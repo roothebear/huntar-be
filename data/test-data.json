@@ -1,0 +1,44 @@
+[
+  {
+    "game_name": "hunting",
+    "assets": [
+      { "longitude": 53.75598, "latitude": -2.35659, "asset_name": "shrek" },
+      { "longitude": 53.74238, "latitude": -2.42359, "asset_name": "donkey" },
+      { "longitude": 54.75598, "latitude": -2.45659, "asset_name": "mushroom" },
+      {
+        "longitude": 52.74238,
+        "latitude": -2.65659,
+        "asset_name": "treasure-box"
+      },
+      { "longitude": 53.44238, "latitude": -2.55659, "asset_name": "puss" }
+    ]
+  },
+  {
+    "game_name": "find",
+    "assets": [
+      { "longitude": 53.27598, "latitude": -2.63659, "asset_name": "shrek" },
+      { "longitude": 53.94238, "latitude": -2.22359, "asset_name": "shrek" },
+      { "longitude": 54.15598, "latitude": -2.92659, "asset_name": "shrek" },
+      { "longitude": 52.47238, "latitude": -2.65659, "asset_name": "donkey" },
+      { "longitude": 53.66238, "latitude": -2.33659, "asset_name": "donkey" }
+    ]
+  },
+  {
+    "game_name": "faiza-bday-party",
+    "assets": [
+      { "longitude": 55.27598, "latitude": -2.63349, "asset_name": "mushroom" },
+      { "longitude": 53.26238, "latitude": -2.33359, "asset_name": "mushroom" },
+      { "longitude": 52.17798, "latitude": -2.62659, "asset_name": "mushroom" },
+      {
+        "longitude": 52.77238,
+        "latitude": -2.86659,
+        "asset_name": "treasure-box"
+      },
+      {
+        "longitude": 53.86238,
+        "latitude": -2.55659,
+        "asset_name": "treasure-box"
+      }
+    ]
+  }
+]
