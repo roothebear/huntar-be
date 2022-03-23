@@ -11,5 +11,5 @@ module.exports = () => {
     .then(() => {
       console.log("Connection estabislished with MongoDB");
     })
-    .catch((error) => console.error(error.message));
+    .catch((error) => console.log(error.message));
 };
