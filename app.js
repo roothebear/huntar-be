@@ -1,15 +1,31 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const initialiseDB = require("./connection");
-const apiRouter = require('./routes/apiRoutes')
+const initializeDB = require('./connection');
+const apiRouter = require('./routes/apiRoutes');
+const customError = require('./controllers/errors');
 
-const ENV = process.env.NODE_ENV || "production";
-
-require("dotenv").config({
+// Environment direction initialization
+const ENV = process.env.NODE_ENV || 'production';
+require('dotenv').config({
   path: `${__dirname}/.env.${ENV}`,
 });
-initialiseDB();
-app.use(express.json())
-app.use('/api',apiRouter)
+initializeDB();
+
+//Parse data
+app.use(express.json());
+
+//routing
+app.use('/api', apiRouter);
+
+//Error Handling
+app.use(customError);
+
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: 'Internal server error' });
+});
+
+app.all('/*', (req, res, next) => {
+  res.status(404).send({ msg: 'Path not found' });
+});
 
 module.exports = app;

@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
+//model determines collection
 const gamesSchema = new mongoose.Schema({
   game_name: { type: String, required: true },
   assets: [
@@ -11,4 +12,4 @@ const gamesSchema = new mongoose.Schema({
   ],
 });
 
-module.exports = mongoose.model("games", gamesSchema);
+module.exports = mongoose.model('games', gamesSchema);

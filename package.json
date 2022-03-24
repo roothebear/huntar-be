@@ -23,9 +23,8 @@
     "express": "^4.17.3",
     "jest": "^27.5.1",
     "mongodb": "^4.4.1",
-    "mongoose": "^6.2.7",
+    "mongoose": "^6.2.8",
     "nodemon": "^2.0.15",
     "supertest": "^6.2.2"
-
   }
 }
