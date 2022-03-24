@@ -3,10 +3,13 @@ const testData = require('./test-data.json');
 const productionData = require('./production-data.json');
 const mongoose = require('mongoose');
 
+require('dotenv').config({
+  path: `${__dirname}/../.env.production`,
+});
+
 mongoose
-  .connect(
-    'mongodb+srv://admin-user:banana123@cluster0.1cbrn.mongodb.net/ScavengeAR?retryWrites=true&w=majority'
-  )
+  .connect(process.env.DB_URI)
+
   .then(() => {
     return seedDB(productionData);
   })

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "nodemon listen.js",
-    "seed":"node ./data/run-seed.js"
+    "seed":"NODE_ENV=production node ./data/run-seed.js"
   },
   "repository": {
     "type": "git",
