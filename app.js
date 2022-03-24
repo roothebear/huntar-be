@@ -3,7 +3,7 @@ const app = express();
 const initializeDB = require('./connection');
 const apiRouter = require('./routes/apiRoutes');
 const customError = require('./controllers/errors');
-
+const cors = require('cors');
 // Environment direction initialization
 const ENV = process.env.NODE_ENV || 'production';
 require('dotenv').config({
@@ -13,6 +13,8 @@ initializeDB();
 
 //Parse data
 app.use(express.json());
+
+app.use(cors());
 
 //routing
 app.use('/api', apiRouter);
