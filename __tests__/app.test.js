@@ -44,7 +44,9 @@ describe('GET /api/games/:id', () => {
       .get('/api/games/not_a_game_id')
       .expect(400)
       .then((res) => {
-        expect(res.body.msg).toBe('Bad request');
+        expect(res.body.msg).toBe(
+          'Cast to ObjectId failed for value "not_a_game_id" (type string) at path "_id" for model "games"'
+        );
       });
   });
   test('status 404: page not found', () => {
@@ -110,7 +112,9 @@ describe('POST- /api/games/:id', () => {
       .send(postGame)
       .expect(400)
       .then((res) => {
-        expect(res.body.msg).toBe('Bad request');
+        expect(res.body.msg).toBe(
+          'games validation failed: game_name: Path `game_name` is required.'
+        );
       });
   });
   test('status 400: should return an error message if incorrect value is received ', () => {
@@ -137,7 +141,9 @@ describe('POST- /api/games/:id', () => {
       .send(postGame)
       .expect(400)
       .then((res) => {
-        expect(res.body.msg).toBe('Bad request');
+        expect(res.body.msg).toBe(
+          'games validation failed: assets.0.longitude: Cast to Number failed for value "kalum" (type string) at path "longitude"'
+        );
       });
   });
 });
