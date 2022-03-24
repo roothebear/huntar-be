@@ -1,15 +1,13 @@
-const { connect, connection } = require("mongoose");
-const { config } = require("dotenv");
+const { connect } = require('mongoose');
 
 module.exports = () => {
   const uri = process.env.DB_URI;
-  console.log(uri);
   connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
     .then(() => {
-      console.log("Connection estabislished with MongoDB");
+      console.log('Connection established with MongoDB');
     })
     .catch((error) => console.log(error.message));
 };
