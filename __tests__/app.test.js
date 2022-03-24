@@ -117,7 +117,7 @@ describe('POST- /api/games/:id', () => {
     const postGame = {
       game_name: 'Kalums-football-party',
       assets: [
-        { longitude: 55.27598, latitude: -2.63349, asset_name: 9 },
+        { longitude: 'kalum', latitude: -2.63349, asset_name: 'mushroom' },
         { longitude: 53.26238, latitude: -2.33359, asset_name: 'mushroom' },
         { longitude: 52.17798, latitude: -2.62659, asset_name: 'mushroom' },
         {
