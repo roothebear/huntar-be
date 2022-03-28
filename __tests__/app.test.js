@@ -25,10 +25,10 @@ describe('GET /api/games/:id', () => {
         expect(games).toEqual(
           expect.objectContaining({
             game_name: expect.any(String),
-            assets: expect.any(Array),
+            assets: expect.any(Object),
           })
         );
-        games.assets.forEach((element) => {
+        Object.values(games.assets).forEach((element) => {
           expect(element).toEqual(
             expect.objectContaining({
               longitude: expect.any(Number),
@@ -63,21 +63,13 @@ describe('POST- /api/games/:id', () => {
   test('Post should add a new game', () => {
     const postGame = {
       game_name: 'Kalums-football-party',
-      assets: [
-        { longitude: 55.27598, latitude: -2.63349, asset_name: 'mushroom' },
-        { longitude: 53.26238, latitude: -2.33359, asset_name: 'mushroom' },
-        { longitude: 52.17798, latitude: -2.62659, asset_name: 'mushroom' },
-        {
-          longitude: 52.77238,
-          latitude: -2.86659,
-          asset_name: 'treasure-box',
-        },
-        {
-          longitude: 53.86238,
-          latitude: -2.55659,
-          asset_name: 'treasure-box',
-        },
-      ],
+      assets: {
+       1: { longitude: 55.27598, latitude: -2.63349, asset_name: 'mushroom' },
+       2: { longitude: 53.26238, latitude: -2.33359, asset_name: 'mushroom' },
+       3: { longitude: 52.17798, latitude: -2.62659, asset_name: 'mushroom' },
+       4: { longitude: 52.77238, latitude: -2.86659, asset_name: 'treasure-box',},
+       5: { longitude: 53.86238, latitude: -2.55659, asset_name: 'treasure-box', },
+      },
     };
     return request(app)
       .post('/api/games')
@@ -91,21 +83,13 @@ describe('POST- /api/games/:id', () => {
   test('status 400: should return an error message if incorrect object key is received', () => {
     const postGame = {
       game_fame: 'Kalums-football-party',
-      assets: [
-        { longitude: 55.27598, latitude: -2.63349, asset_name: 'mushroom' },
-        { longitude: 53.26238, latitude: -2.33359, asset_name: 'mushroom' },
-        { longitude: 52.17798, latitude: -2.62659, asset_name: 'mushroom' },
-        {
-          longitude: 52.77238,
-          latitude: -2.86659,
-          asset_name: 'treasure-box',
-        },
-        {
-          longitude: 53.86238,
-          latitude: -2.55659,
-          asset_name: 'treasure-box',
-        },
-      ],
+      assets: {
+       1: { longitude: 55.27598, latitude: -2.63349, asset_name: 'mushroom' },
+       2: { longitude: 53.26238, latitude: -2.33359, asset_name: 'mushroom' },
+       3: { longitude: 52.17798, latitude: -2.62659, asset_name: 'mushroom' },
+       4: { longitude: 52.77238, latitude: -2.86659, asset_name: 'treasure-box' },
+       5: { longitude: 53.86238, latitude: -2.55659, asset_name: 'treasure-box' },
+      }
     };
     return request(app)
       .post('/api/games')
@@ -120,21 +104,13 @@ describe('POST- /api/games/:id', () => {
   test('status 400: should return an error message if incorrect value is received ', () => {
     const postGame = {
       game_name: 'Kalums-football-party',
-      assets: [
-        { longitude: 'kalum', latitude: -2.63349, asset_name: 'mushroom' },
-        { longitude: 53.26238, latitude: -2.33359, asset_name: 'mushroom' },
-        { longitude: 52.17798, latitude: -2.62659, asset_name: 'mushroom' },
-        {
-          longitude: 52.77238,
-          latitude: -2.86659,
-          asset_name: 9,
-        },
-        {
-          longitude: 53.86238,
-          latitude: -2.55659,
-          asset_name: 9,
-        },
-      ],
+      assets: {
+       1: { longitude: 'kalum', latitude: -2.63349, asset_name: 'mushroom' },
+       2: { longitude: 53.26238, latitude: -2.33359, asset_name: 'mushroom' },
+       3: { longitude: 52.17798, latitude: -2.62659, asset_name: 'mushroom' },
+       4: { longitude: 52.77238, latitude: -2.86659, asset_name: 9},
+       5: { longitude: 53.86238, latitude: -2.55659, asset_name: 9},
+      },
     };
     return request(app)
       .post('/api/games')
@@ -142,8 +118,41 @@ describe('POST- /api/games/:id', () => {
       .expect(400)
       .then((res) => {
         expect(res.body.msg).toBe(
-          'games validation failed: assets.0.longitude: Cast to Number failed for value "kalum" (type string) at path "longitude"'
+          'games validation failed: assets.1.longitude: Cast to Number failed for value "kalum" (type string) at path "longitude"'
         );
       });
   });
+  
+  test('status 400 : should return and error message if game name or assets are not sent' ,() => {
+    const postGame = {
+      game_name: "Imad's Eid day",
+      assets:{},
+    };
+    return request(app)
+    .post('/api/games')
+    .send(postGame)
+    .expect(400)
+    .then((res) => {
+     
+    });
+  })
+  test('status 400 : should return and error message if game name or assets are not sent' ,() => {
+    const postGame = {
+      game_name: '',
+      assets:{
+        1: { longitude: 53.26228, latitude: -2.63349, asset_name: 'mushroom' },
+        2: { longitude: 53.26238, latitude: -2.33359, asset_name: 'mushroom' },
+        3: { longitude: 52.17798, latitude: -2.62659, asset_name: 'mushroom' },
+        4: { longitude: 52.77238, latitude: -2.86659, asset_name: 9},
+        5: { longitude: 53.86238, latitude: -2.55659, asset_name: 9},
+      },
+    };
+    return request(app)
+    .post('/api/games')
+    .send(postGame)
+    .expect(400)
+    .then((res) => {
+     
+    });
+  })
 });

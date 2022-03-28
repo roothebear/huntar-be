@@ -1,19 +1,20 @@
-[{
-    "game_name": "treasure-hunt",
-"assets": [
-  { "longitude": 55.27598, "latitude": -2.63349, "asset_name": "mushroom" },
-  { "longitude": 53.26238, "latitude": -2.33359, "asset_name": "mushroom" },
-  { "longitude": 52.17798, "latitude": -2.62659, "asset_name": "mushroom" },
-  {"longitude": 52.77238,"latitude": -2.86659,"asset_name": "treasure-box"},
-  {"longitude": 53.86238,"latitude": -2.55659,"asset_name": "treasure-box"}
+[
+  {"game_name": "treasure-hunt",
+    "assets": {
+      "1":  { "longitude": 55.27598, "latitude": -2.63349, "asset_name": "mushroom" },
+      "2":  { "longitude": 53.26238, "latitude": -2.33359, "asset_name": "mushroom" },
+      "3":  { "longitude": 52.17798, "latitude": -2.62659, "asset_name": "mushroom" },
+      "4":  { "longitude": 52.77238,  "latitude": -2.86659, "asset_name": "treasure-box"},
+      "5":  { "longitude": 53.86238,  "latitude": -2.55659, "asset_name": "treasure-box"}
+    }
+  },
+  {"game_name": "hunting",
+    "assets": {
+      "1":  { "longitude": 53.75598, "latitude": -2.35659, "asset_name": "shrek" },
+      "2":  { "longitude": 53.74238, "latitude": -2.42359, "asset_name": "donkey" },
+      "3":  { "longitude": 54.75598, "latitude": -2.45659, "asset_name": "mushroom" },
+      "4":  { "longitude": 52.74238,  "latitude": -2.65659, "asset_name": "treasure-box"},
+      "5":  { "longitude": 53.44238, "latitude": -2.55659, "asset_name": "puss" }
+    }
+  }
 ]
-},
-{"game_name": "hunting",
-    "assets": [
-      { "longitude": 53.75598, "latitude": -2.35659, "asset_name": "shrek" },
-      { "longitude": 53.74238, "latitude": -2.42359, "asset_name": "donkey" },
-      { "longitude": 54.75598, "latitude": -2.45659, "asset_name": "mushroom" },
-      {"longitude": 52.74238,"latitude": -2.65659,"asset_name": "treasure-box"},
-      { "longitude": 53.44238, "latitude": -2.55659, "asset_name": "puss" }
-    ]}
-    ]
