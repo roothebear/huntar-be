@@ -3,14 +3,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/bayardt/huntar_fe">
+  <a href="https://github.com/roothebear/huntar-fe">
     <img src="HuntAR.png" alt="Logo" height="80">
   </a>
 
 <h3 align="center">HuntAR</h3>
 
   <p align="center">
-    <a href="https://scavengar.netlify.app">View Demo</a>
+    <a href="https://huntar.netlify.app">View Demo</a>
   </p>
 </div>
 
@@ -78,7 +78,7 @@ Node v17.0.0 or higher is recommended on your development machine to work with t
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/bayardt/huntar-be.git
+   git clone https://github.com/roothebear/huntar-be.git
    ```
 2. Install NPM packages
    ```sh
