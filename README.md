@@ -68,7 +68,7 @@ It was created in collaboration by:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-As well as following the instructions below you may want to look at the information for the accompanying front-end repo: https://github.com/bayardt/huntar-fe
+As well as following the instructions below you may want to look at the information for the accompanying front-end repo: https://github.com/roothebear/huntar-fe
 
 ### Prerequisites
 
